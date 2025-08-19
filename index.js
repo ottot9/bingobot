@@ -41,7 +41,8 @@ app.get("/goal", async (req, res) => {
     if (goals[query]) {
       res.send(goals[query]);
     } else {
-      res.status(404).send(`Goal '${query}' not found.`);
+      // Friendly error if goal is not found
+      res.status(404).send(`Goal "${req.query.name}" not found. Check spelling or try another goal.`);
     }
   } catch (err) {
     console.error(err);
