@@ -128,6 +128,7 @@ app.get("/goal/compact", async (req, res) => {
       
       if (goal.levels) response += ` | ${goal.levels}`;
       if (goal.difficulty) response += ` | ${goal.difficulty}`;
+      if (goal.videoLink) response += ` | Video: ${goal.videoLink}`;
       
       return res.send(response);
     }
